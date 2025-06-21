@@ -10,3 +10,5 @@ Project for Jenkins. Here are some screenshot of the work.
 
 ![Screenshot 2025-06-19 001335](https://github.com/user-attachments/assets/1f0bdd6f-94a7-424d-bd8e-6e08ee4cbc70)
 
+Note:
+Since the app is smaller, I kept the structure flat to keep things simple. I'm focused right now on mastering infrastructure and CI/CD. The folders structure like src/ or app/ i am familiar with :)
