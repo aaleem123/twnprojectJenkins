@@ -15,11 +15,11 @@
 
   
 **⚙️ Prerequisites**
-✅ Jenkins installed on ec2 as Docker container 
-✅ Docker installed on ec2/Docker sock file mounted in Jenkins container
-✅ Docker Hub account
-✅ SSH access to your remote server
-✅ Required Jenkins credentials configured
+- ✅ Jenkins installed on ec2 as Docker container 
+- ✅ Docker installed on ec2/Docker sock file mounted in Jenkins container
+- ✅ Docker Hub account
+- ✅ SSH access to your remote server
+- ✅ Required Jenkins credentials configured
 
 **🎨 Screenshots**
 
