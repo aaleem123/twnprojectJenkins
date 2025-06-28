@@ -1,4 +1,27 @@
-Project for Jenkins. Here are some screenshot of the work.
+
+**🟢 Node.js Application with Jenkins CI/CD Pipeline**
+- ✅ Building and testing a Node.js application
+- ✅ Automating Docker image creation and push to Docker Hub
+- ✅ Deploying the app to a remote server using Jenkins pipeline
+- ✅ Full CI/CD pipeline for containerized Node.js workloads
+
+
+**🌍 Project Overview**
+- 🚀 Automated builds & tests via Jenkins
+- 🐳 Dockerized Node.js application
+- 🤖 CI/CD pipeline with Docker image publishing to Docker Hub
+- 🔐 Secure remote server deployment with SSH
+- 💡 Customizable Jenkinsfile for flexible automation
+
+  
+**⚙️ Prerequisites**
+✅ Jenkins installed on ec2 as Docker container 
+✅ Docker installed on ec2/Docker sock file mounted in Jenkins container
+✅ Docker Hub account
+✅ SSH access to your remote server
+✅ Required Jenkins credentials configured
+
+**🎨 Screenshots**
 
 ![Screenshot 2025-06-18 154910](https://github.com/user-attachments/assets/d154f18a-aa52-4876-b899-40a6aac1e4e0)
 
