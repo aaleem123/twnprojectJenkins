@@ -15,12 +15,6 @@ pipeline {
             }
         }
 
-        stage('Increment Version') {
-            steps {
-                sh 'npm version minor --no-git-tag-version'
-            }
-        }
-
         stage('Run Tests') {
             steps {
                 sh 'npm test'
@@ -29,11 +23,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    def version = sh(script: "node -p \"require('./package.json').version\"", returnStdout: true).trim()
-                    env.IMAGE_TAG = "${DOCKER_IMAGE}:${version}"
-                    sh "docker build -t ${env.IMAGE_TAG} ."
-                }
+                sh 'docker build -t ${DOCKER_IMAGE}:latest .'
             }
         }
 
@@ -46,25 +36,8 @@ pipeline {
                 )]) {
                     sh '''
                         echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-                        docker push ${IMAGE_TAG}
+                        docker push ${DOCKER_IMAGE}:latest
                     '''
                 }
             }
         }
-
-        stage('Commit Version Bump to GitHub') {
-            steps {
-                sshagent (credentials: [GIT_CREDENTIALS_ID]) {
-                    sh '''
-                        git config user.name "aaleem123"
-                        git config user.email "attiaaleem@gmail.com"
-                        git add package.json package-lock.json
-                        git commit -m "chore: bump version [ci skip]" || echo "Nothing to commit"
-                        git push origin HEAD:main
-                    '''
-                }
-            }
-        }
-    }
-}
-
